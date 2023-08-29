@@ -25,7 +25,6 @@ export default function Users() {
     useEffect(() => {
         axios.get('https://randomuser.me/api/?results=50')
             .then(({data}) => {
-                console.log(Object.values(data.results));
                 setUsers(Object.values(data.results));
             })
             .catch((error) => {
