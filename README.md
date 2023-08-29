@@ -1,3 +1,13 @@
+# Install and run on development mode:
+
+```js
+cd path_where_the_folder_was_downloaded
+npm install
+npm run dev
+```
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
