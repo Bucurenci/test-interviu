@@ -1,0 +1,114 @@
+body {
+  background-color: $gray-200;
+}
+
+.navbar.sticky-top {
+
+  .wrapper {
+    max-height: 75px;
+
+    .profile-photo {
+        width: 70px;
+    }
+  }
+}
+
+.users-card {
+  background-color: $gray-100;
+}
+
+.user-card {
+  transition: transform .2s;
+
+  &:hover {
+    cursor: pointer;
+    background: $primary;
+    color: $white;
+    transform: scale(1.05);
+  }
+}
+
+// For Modal Component
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: $zindex-modal;
+
+  .modal-wrapper {
+    position: relative;
+    --#{$prefix}modal-width: #{$modal-lg};
+    margin: -10px auto 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .modal-content {
+      position: relative;
+      background: $white;
+      border: 1px solid $gray-300;
+      background-clip: padding-box;
+      border-radius: $border-radius-lg;
+
+      .modal-header, .modal-body, .modal-footer {
+        border-top-left-radius: $border-radius-lg;
+        border-top-right-radius: $border-radius-lg;
+        padding: $modal-inner-padding;
+      }
+
+      .modal-header {
+        border-bottom: 1px solid $gray-300;
+        background: $gray-100;
+
+        .close-modal {
+          opacity: .5;
+          transition: .2s;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .modal-footer {
+        border-top: 1px solid $gray-300;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xs) {
+
+    // Automatically set modal's width for larger viewports
+    .modal-wrapper {
+      max-width: var(--#{$prefix}modal-width);
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    // Automatically set modal's width for larger viewports
+    .modal-wrapper {
+      max-width: var(--#{$prefix}modal-width);
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: -10px auto 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .modal-wrapper {
+      --#{$prefix}modal-width: #{$modal-lg};
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .modal-wrapper {
+      --#{$prefix}modal-width: #{$modal-xl};
+    }
+  }
+}
